@@ -8,7 +8,6 @@ const Products = () => {
 
     const { state, dispatch } = useGlobalcontext()
     const inputRef = useRef()
-    console.log(state)
 
     const handlesubmmit = (e) => {
         e.preventDefault()

@@ -13,7 +13,7 @@ export const AppContextProvider = ({ children }) => {
   const url = "https://dummyjson.com/products/search?q=";
   ///reducer
   const initialState = {
-    id: 0,
+    id: null,
     searchChar: "a",
     products: [],
     product: {},
