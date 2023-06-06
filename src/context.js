@@ -13,8 +13,10 @@ export const AppContextProvider = ({ children }) => {
   const url = "https://dummyjson.com/products/search?q=";
   ///reducer
   const initialState = {
+    id: 0,
     searchChar: "a",
     products: [],
+    product: {},
     cart: [],
   };
   const reducer = (state, action) => {
@@ -28,6 +30,16 @@ export const AppContextProvider = ({ children }) => {
         return {
           ...state,
           searchChar: action.payload,
+        };
+      case "SET_ID":
+        return {
+          ...state,
+          id: action.payload,
+        };
+      case "SET_PRODUCT":
+        return {
+          ...state,
+          product: state.products.filter((product) => product.id === state.id),
         };
       default:
         return state;
