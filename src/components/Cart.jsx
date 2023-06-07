@@ -9,9 +9,19 @@ const Cart = () => {
         dispatch({ type: "REMOVE_FROM_CART", payload: id })
     }
 
+    if (state.cart.length === 0) {
+        return (
+            <div className='text-center my-24'>
+                <h1 className='text-3xl'>
+                    No items in cart
+                </h1>
+            </div>
+        )
+    }
+
     return (
         <div className='mt-6'>
-            <h1 className='text-center text-3xl font-bold'>Cart</h1>
+            <h1 className='text-center text-3xl font-bold my-6'>Cart</h1>
             <div >
                 {state.cart.map((list) => <div className='max-w-[800px] bg-slate-100 mb-4 mx-auto md:flex justify-between p-2 rounded-lg shadow-md'>
                     <div className='md:flex'>
