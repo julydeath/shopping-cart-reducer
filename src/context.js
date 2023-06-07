@@ -41,6 +41,16 @@ export const AppContextProvider = ({ children }) => {
           ...state,
           product: state.products.filter((product) => product.id === state.id),
         };
+      case "ADD_TO_CART":
+        return {
+          ...state,
+          cart: [...state.cart, action.payload],
+        };
+      case "REMOVE_FROM_CART":
+        return {
+          ...state,
+          cart: state.cart.filter((list) => list.id !== action.payload),
+        };
       default:
         return state;
     }

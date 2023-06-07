@@ -3,9 +3,13 @@ import { useGlobalcontext } from '../context'
 
 
 const SingleProduct = () => {
-    const { state } = useGlobalcontext()
+    const { state, dispatch } = useGlobalcontext()
     const [moreImages, setMoreImages] = useState(false)
     console.log(state)
+
+    const handleClick = (product) => {
+        dispatch({ type: "ADD_TO_CART", payload: product })
+    }
 
     return (
         <div>{state.product.map((li) => <div key={li.id}>
@@ -28,7 +32,7 @@ const SingleProduct = () => {
                         <p>
                             Discount Price : $ {li.price - (li.price * li.discountPercentage / 100)} /-
                         </p>
-                        <button className='bg-black text-white px-6 py-2 mt-6'>Add to cart</button>
+                        <button className='bg-black text-white px-6 py-2 mt-6 mb-2' onClick={() => handleClick(li)}>Add to cart</button>
                     </div>
                 </div>
 

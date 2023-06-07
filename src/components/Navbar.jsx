@@ -10,7 +10,7 @@ const Navbar = () => {
     return (
         <div className='text-black bg-slate-200 flex justify-between p-4 shadow-2xl'>
             <div>
-                <h1 className='text-3xl font-bold hover:cursor-pointer'>MANOJ</h1>
+                <Link className='text-3xl font-bold hover:cursor-pointer' to="/">MANOJ</Link>
             </div>
             <div className='mx-2 hidden md:flex'>
                 <Link className='mx-4 text-xl hover:underline' to="/products">Products</Link>
