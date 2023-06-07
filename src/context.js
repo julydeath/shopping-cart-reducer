@@ -15,6 +15,7 @@ export const AppContextProvider = ({ children }) => {
   const initialState = {
     id: null,
     searchChar: "a",
+    price: [],
     products: [],
     product: {},
     cart: [],

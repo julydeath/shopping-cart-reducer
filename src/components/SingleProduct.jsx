@@ -5,7 +5,6 @@ import { useGlobalcontext } from '../context'
 const SingleProduct = () => {
     const { state, dispatch } = useGlobalcontext()
     const [moreImages, setMoreImages] = useState(false)
-    console.log(state)
 
     const handleClick = (product) => {
         dispatch({ type: "ADD_TO_CART", payload: product })
