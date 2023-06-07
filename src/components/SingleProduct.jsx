@@ -32,7 +32,7 @@ const SingleProduct = () => {
                         <p>
                             Discount Price : $ {li.price - (li.price * li.discountPercentage / 100)} /-
                         </p>
-                        <button className='bg-black text-white px-6 py-2 mt-6 mb-2' onClick={() => handleClick(li)}>Add to cart</button>
+                        <button className='bg-black text-white px-6 py-2 mt-6 mb-2 active:bg-slate-700' onClick={() => handleClick(li)}>Add to cart</button>
                     </div>
                 </div>
 
